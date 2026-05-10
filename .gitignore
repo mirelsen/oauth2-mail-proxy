@@ -1,0 +1,17 @@
+.cursor/
+
+# Build artifacts
+dist/
+build.log
+
+# Local runtime files
+*.log
+*.bak
+
+# Local secrets/config
+mail-bridge.yml
+
+# Downloaded binaries
+nssm/
+nssm-2.24/
+nssm.zip

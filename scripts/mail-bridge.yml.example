@@ -1,0 +1,51 @@
+listen:
+  smtp: "127.0.0.1:1025"
+  imap: "127.0.0.1:1143"
+  admin: "127.0.0.1:7777"
+
+accounts:
+  - label: "gmail-personal"
+    email: "user@gmail.com"
+    provider: "gmail"
+    upstream:
+      imap_host: "imap.gmail.com:993"
+      smtp_host: "smtp.gmail.com:587"
+    local_login:
+      username: "user@gmail.com"
+      password: "anything"
+    oauth_ref: "gmail-personal"
+  - label: "m365-work"
+    email: "user@firma.com"
+    provider: "m365"
+    upstream:
+      imap_host: "outlook.office365.com:993"
+      smtp_host: "smtp.office365.com:587"
+    local_login:
+      username: "user@firma.com"
+      password: "anything"
+    oauth_ref: "m365-work"
+
+security:
+  admin_user: "admin"
+  admin_password_hash: "<argon2id>"
+  csrf: true
+  bind_local_only: true
+
+logging:
+  level: "info"
+  file: ""
+
+oauth_apps:
+  gmail-personal:
+    provider: gmail
+    client_id: "<google-client-id>"
+    client_secret: "<google-client-secret>"
+    redirect_url: "http://127.0.0.1:7777/oauth/callback"
+  m365-work:
+    provider: m365
+    client_id: "<azure-client-id>"
+    client_secret: "<azure-client-secret>"
+    tenant: "common"
+    redirect_url: "http://127.0.0.1:7777/oauth/callback"
+
+

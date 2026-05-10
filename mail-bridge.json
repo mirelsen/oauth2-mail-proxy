@@ -1,0 +1,86 @@
+{
+	"id": "a2d5f110-e291-46ff-bee8-ad42d02d1e66",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": null,
+	"addIns": [],
+	"allowPublicClient": null,
+	"appId": "10580f98-732a-4a87-8b4c-dfe616d81403",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2025-09-13T15:33:40Z",
+	"description": null,
+	"certification": null,
+	"disabledByMicrosoftStatus": null,
+	"groupMembershipClaims": null,
+	"identifierUris": [],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [],
+	"knownClientApplications": [],
+	"logoUrl": null,
+	"logoutUrl": null,
+	"name": "mail-bridge",
+	"notes": null,
+	"oauth2AllowIdTokenImplicitFlow": false,
+	"oauth2AllowImplicitFlow": false,
+	"oauth2Permissions": [],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": null,
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [
+		{
+			"customKeyIdentifier": null,
+			"endDate": "2027-09-13T15:36:51.877Z",
+			"keyId": "f414a41f-0fed-4030-bc33-3e7badbf4c96",
+			"startDate": "2025-09-13T15:36:51.877Z",
+			"value": null,
+			"createdOn": "2025-09-13T15:37:04.6733948Z",
+			"hint": "Qwp",
+			"displayName": "mail-bridge"
+		}
+	],
+	"preAuthorizedApplications": [],
+	"publisherDomain": "NETORGFT19559412.onmicrosoft.com",
+	"replyUrlsWithType": [
+		{
+			"url": "http://localhost:7777/oauth/callback",
+			"type": "Web"
+		}
+	],
+	"requiredResourceAccess": [
+		{
+			"resourceAppId": "00000003-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "652390e4-393a-48de-9484-05f9b1212954",
+					"type": "Scope"
+				},
+				{
+					"id": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+					"type": "Scope"
+				},
+				{
+					"id": "258f6531-6087-4cc4-bb90-092c5fb3ed3f",
+					"type": "Scope"
+				},
+				{
+					"id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+					"type": "Scope"
+				}
+			]
+		}
+	],
+	"samlMetadataUrl": null,
+	"signInUrl": null,
+	"signInAudience": "AzureADMultipleOrgs",
+	"tags": [],
+	"tokenEncryptionKeyId": null
+}
