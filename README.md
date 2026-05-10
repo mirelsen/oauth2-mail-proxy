@@ -1,65 +1,65 @@
 # oauth2-mail-proxy
 
-Proxy local IMAP/SMTP cu autentificare OAuth2 (Gmail si Microsoft 365), plus UI de administrare web.
+Local IMAP/SMTP proxy with OAuth2 authentication (Gmail and Microsoft 365), plus a web admin UI.
 
-## Ce face proiectul
+## What this project does
 
-- expune local SMTP pe `127.0.0.1:1025`
-- expune local IMAP pe `127.0.0.1:1143`
-- expune Admin UI pe `127.0.0.1:7777`
-- permite folosirea clientilor clasici de mail fara parolele reale de provider
+- exposes local SMTP on `127.0.0.1:1025`
+- exposes local IMAP on `127.0.0.1:1143`
+- exposes Admin UI on `127.0.0.1:7777`
+- lets classic mail clients work without storing provider account passwords
 
-## Cerinte
+## Requirements
 
 - Windows 10/11
 - Go 1.22+
 - PowerShell
 
-## Build rapid
+## Quick build
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 ```
 
-Executabilul rezultat va fi in `dist\mail-bridge.exe`.
+The output binary will be available at `dist\mail-bridge.exe`.
 
-## Configurare
+## Configuration
 
-1. Copiaza exemplul:
+1. Copy the example config:
 
 ```powershell
 copy .\scripts\mail-bridge.yml.example .\mail-bridge.yml
 ```
 
-2. Completeaza in `mail-bridge.yml`:
-- conturile (`accounts`)
-- aplicatiile OAuth (`oauth_apps`)
-- hash-ul pentru parola de admin (`security.admin_password_hash`)
+2. Update `mail-bridge.yml`:
+- accounts (`accounts`)
+- OAuth apps (`oauth_apps`)
+- admin password hash (`security.admin_password_hash`)
 
-Pentru hash parola poti folosi utilitarul:
+To generate a password hash, use:
 
 ```powershell
 go run .\cmd\hashpw
 ```
 
-## Rulare manuala
+## Run manually
 
 ```powershell
 .\dist\mail-bridge.exe --config .\mail-bridge.yml
 ```
 
-## Instalare ca serviciu Windows (autostart)
+## Install as a Windows service (auto-start)
 
-Scriptul `service.ps1` instaleaza serviciul prin NSSM, seteaza restart policy si pornire automata.
+The `service.ps1` script installs the app as an NSSM-managed Windows service, configures restart policy, and enables auto-start.
 
-Ruleaza PowerShell ca Administrator:
+Run PowerShell as Administrator:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\service.ps1
 ```
 
-Serviciul va porni automat dupa restart.
+The service will start automatically after a system reboot.
 
-## Fisiere sensibile
+## Sensitive files
 
-Fisierul local `mail-bridge.yml` este ignorat in Git (contine secrete). Commit-urile trebuie facute fara credentiale reale.
+The local `mail-bridge.yml` file is ignored by Git (contains secrets). Do not commit real credentials.
